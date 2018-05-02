@@ -288,10 +288,10 @@ fi
 
 # Prompt for name of the mesh network
 ##TODO## This should be moved up to to mesh point question
-read -p "Enter the name of your mesh network (default: tomesh): " -r
-export MESH_NAME=`echo $REPLY | sed 's/ //g'`
+# read -p "Enter the name of your mesh network (default: tomesh): " -r
+# export MESH_NAME=`echo $REPLY | sed 's/ //g'`
 if [ "${#MESH_NAME}" == 0 ]; then
-    export MESH_NAME="tomesh"
+    export MESH_NAME="cosmesh"
 fi
 
 # Get tools
@@ -453,8 +453,6 @@ sudo echo $newhostname | sudo tee /etc/hostname > /dev/null
 sudo sed -i -e "s/$oldhostname/$newhostname/" /etc/hosts
 
 echo -e "Your node's new hostname is $newhostname"
-
-read -p "Installation complete. Press any key to reboot your new node. " -n 1 -r
 
 # Reboot device
 sudo reboot
