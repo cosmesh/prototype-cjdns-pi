@@ -314,11 +314,7 @@ sudo apt-get install haveged -y
 # Check if cjdns is to be compiled or downloaded
 if [[ ! -e "/usr/bin/cjdroute" ]]; then
     if [ ! -z "$CJDNS_PACKAGE" ]; then
-        read -p "Compile cjdns from source (Y) or use $CJDNS_PACKAGE Debian package (n)?" -n 1 -r
-        echo ""
-        if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-            CJDNS_PACKAGE="";
-        fi
+        CJDNS_PACKAGE="";
     fi
 fi
 
@@ -453,6 +449,3 @@ sudo echo $newhostname | sudo tee /etc/hostname > /dev/null
 sudo sed -i -e "s/$oldhostname/$newhostname/" /etc/hosts
 
 echo -e "Your node's new hostname is $newhostname"
-
-# Reboot device
-sudo reboot
