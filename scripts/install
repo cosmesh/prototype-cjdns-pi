@@ -2,9 +2,9 @@
 
 set -e
 
-# Use provided repository or default to tomeshnet/prototype-cjdns-pi
+# Use provided repository or default to cosmesh/prototype-cjdns-pi
 if [ -z "$GIT_PROTOTYPE_CJDNS_PI" ]; then
-    GIT_PROTOTYPE_CJDNS_PI="https://github.com/tomeshnet/prototype-cjdns-pi.git"
+    GIT_PROTOTYPE_CJDNS_PI="https://github.com/cosmesh/prototype-cjdns-pi.git"
 fi
 
 # Use provided tag or default to master
