@@ -311,13 +311,6 @@ fi
 # Install possibly missing tools
 sudo apt-get install haveged -y
 
-# Check if cjdns is to be compiled or downloaded
-if [[ ! -e "/usr/bin/cjdroute" ]]; then
-    if [ ! -z "$CJDNS_PACKAGE" ]; then
-        CJDNS_PACKAGE="";
-    fi
-fi
-
 if [ ! -z "$CJDNS_PACKAGE" ]; then
     echo -e "\e[1;31mInstalling cjdns Debian package\e[0m"
     wget https://github.com/darkdrgn2k/ToMeshStuff/raw/master/deb/$CJDNS_PACKAGE -O /tmp/cjdns.deb
